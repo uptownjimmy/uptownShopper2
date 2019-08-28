@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ modalTitle }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list reorder="true">
+    <ion-reorder-group (ionItemReorder)="reorder($event)" disabled="false">
+      <ion-item
+        class="list-group-item"
+        *ngFor="let item of items">
+        <ion-label>{{ item.name }}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        color="medium"
+        fill="outline"
+        size="small"
+        (click)="closeModal()">
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button
+        color="success"
+        fill="outline"
+        size="small"
+        (click)="saveReorder()">
+        Save
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

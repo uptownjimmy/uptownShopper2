@@ -1,25 +1,34 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { ItemListComponent } from './item/list/list.component';
+import { ShoppingListComponent } from './shopping/list/list.component';
+import { StoreListComponent } from './store/list/list.component';
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'shopping',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    path: 'shopping',
+      outlet: 'shopping',
+      component: ShoppingListComponent,
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+    path: 'pantry',
+    loadChildren: () => import('./item/list/list.component').then(m => m.ItemListComponent)
+  },
+  {
+    path: 'stores',
+    loadChildren: () => import('./store/list/list.component').then(m => m.StoreListComponent)
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
   exports: [RouterModule]
 })

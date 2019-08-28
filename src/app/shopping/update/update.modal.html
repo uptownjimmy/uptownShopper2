@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h3>Add/Remove Items</h3>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar text-center>
+    <ion-button
+      size="small"
+      color="balanced"
+      fill="outline"
+      (click)="addToShoppingList()"
+    >
+      Done
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item
+        *ngFor="let item of items"
+        (click)="item.active = !item.active; onItemListClick(item)"
+      >
+        <label>{{ item.name }}</label>
+        <ion-checkbox slot="end" [checked]="item.active"> </ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

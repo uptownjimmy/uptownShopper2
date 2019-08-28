@@ -1,0 +1,50 @@
+<!--<ngx-loading [show]="itemService.loading"></ngx-loading>-->
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button size="small" color="primary" fill="outline" (click)="openReorderModal()">
+          <ion-icon name="repeat"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>
+          <h3>Shopping List</h3>
+      </ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            <!--<div class="btn-group" ngbDropdown>-->
+            <!--<button-->
+            <!--class="btn btn-outline-secondary"-->
+            <!--id="filterByStoreDropdown"-->
+            <!--ngbDropdownToggle>-->
+            <!--{{ selectedStore }}-->
+            <!--</button>-->
+            <!--<div-->
+            <!--class="dropdown-menu"-->
+            <!--aria-labelledby="filterByStoreDropdown"-->
+            <!--ngbDropdownMenu>-->
+            <!--<button-->
+            <!--class="dropdown-item"-->
+            <!--*ngFor="let store of stores"-->
+            <!--(click)="filterByStore(store.name)">-->
+            <!--{{ store.name }}-->
+            <!--</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <ion-button color="primary" fill="outline" size="small" (click)="addOrRemoveItems()">
+                + / -
+            </ion-button>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+      <ion-item
+                class="list-group-item"
+                *ngFor="let item of activeShoppingItems"
+                (click)="openItemOptions($event, item)">
+          <ion-label>{{ item.name }}</ion-label>
+          <ion-icon name="arrow-forward"></ion-icon>
+      </ion-item>
+  </ion-list>
+</ion-content>
