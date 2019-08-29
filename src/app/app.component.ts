@@ -18,7 +18,7 @@ export class AppComponent {
     },
     {
       title: 'Pantry',
-      url: '/pantry',
+      url: '/items',
       // icon: 'list'
     },
     {

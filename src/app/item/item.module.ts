@@ -15,7 +15,7 @@ import {ItemListComponent} from './list/list.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild([{path: '', component: ItemListComponent}]),
+    RouterModule.forChild([{path: 'items', component: ItemListComponent}]),
   ],
   declarations: [ItemListComponent, ItemDetailModal, ReorderModalComponent, ConfirmDeleteItemPopover],
   entryComponents: [ItemDetailModal, ReorderModalComponent, ConfirmDeleteItemPopover],

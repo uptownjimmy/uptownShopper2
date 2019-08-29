@@ -13,16 +13,18 @@ const routes: Routes = [
   },
   {
     path: 'shopping',
-      outlet: 'shopping',
-      component: ShoppingListComponent,
+    outlet: 'shopping',
+    component: ShoppingListComponent,
   },
   {
-    path: 'pantry',
-    loadChildren: () => import('./item/list/list.component').then(m => m.ItemListComponent)
+    path: 'items',
+    outlet: 'items',
+    component: ItemListComponent,
   },
   {
     path: 'stores',
-    loadChildren: () => import('./store/list/list.component').then(m => m.StoreListComponent)
+    outlet: 'stores',
+    component: StoreListComponent,
   }
 ];
 

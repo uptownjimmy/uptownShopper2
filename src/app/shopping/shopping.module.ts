@@ -7,14 +7,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { ShoppingListComponent } from './list/list.component';
 import { ShoppingItemOptionsPopover } from './options/options.popover';
-import { ShoppingListUpdateModal } from './update/update.modal';
+import { ShoppingListUpdateModalComponent } from './update/update.modal';
 
 @NgModule({
   imports: [
     IonicModule, CommonModule, FormsModule, ReactiveFormsModule,
-    RouterModule.forChild([{ path: '', component: ShoppingListComponent }]),
+    RouterModule.forChild([{ path: 'shopping', component: ShoppingListComponent }]),
   ],
-  declarations: [ShoppingListComponent, ShoppingItemOptionsPopover, ShoppingListUpdateModal],
-  entryComponents: [ShoppingItemOptionsPopover, ShoppingListUpdateModal],
+  declarations: [ShoppingListComponent, ShoppingItemOptionsPopover, ShoppingListUpdateModalComponent],
+  entryComponents: [ShoppingItemOptionsPopover, ShoppingListUpdateModalComponent],
 })
 export class ShoppingModule {}

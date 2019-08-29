@@ -7,7 +7,7 @@ import {Item} from '../../item/item.model';
 import {ItemCategories} from '../../item/ItemCategory.model';
 import {ReorderModalComponent} from '../../item/reorder/reorder.modal';
 import {Store} from '../../store/store.model';
-import {ShoppingListUpdateModal} from '../update/update.modal';
+import {ShoppingListUpdateModalComponent} from '../update/update.modal';
 
 @Component({
   selector: 'us-shopping-list',
@@ -55,7 +55,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   async addOrRemoveItems() {
     const modal = await this.modalController.create({
-      component: ShoppingListUpdateModal,
+      component: ShoppingListUpdateModalComponent,
       componentProps: {
         items: this.items,
       },

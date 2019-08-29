@@ -10,7 +10,7 @@ import {QueryItem} from '../../types';
   templateUrl: './update.modal.html',
   styleUrls: ['./update.modal.css'],
 })
-export class ShoppingListUpdateModal implements OnInit, OnDestroy {
+export class ShoppingListUpdateModalComponent implements OnInit, OnDestroy {
   @Input() items: QueryItem[];
   private subscription: Subscription;
 
@@ -47,7 +47,7 @@ export class ShoppingListUpdateModal implements OnInit, OnDestroy {
     }
   }
 
-  addToShoppingList() {
+  updateShoppingList() {
     this.loading = true;
     this.updateItems.forEach((item) => {
       this.itemService.updateExistingItem(item);

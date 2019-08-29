@@ -1,28 +1,26 @@
-<!--<ngx-loading [show]="itemService.loading"></ngx-loading>-->
 <ion-header>
-    <ion-toolbar>
-        <ion-title>
-            <h3>Stores</h3>
-        </ion-title>
-    </ion-toolbar>
-    <ion-toolbar>
-        <ion-title>
-            <ion-button color="primary" fill="outline" size="small">
-                <ion-icon name="add"></ion-icon>
-                Create New Store
-            </ion-button>
-        </ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary-shade" fill="outline"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <h3>Stores</h3>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary-shade" fill="outline" size="small">
+        <ion-icon name="add"></ion-icon>
+         New Store
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
-    <ion-card>
-        <ion-list>
-            <ion-item
-                    class="list-group-item"
-                    *ngFor="let store of stores">
-                <ion-label>{{ store.name }}</ion-label>
-                <ion-icon name="arrow-forward"></ion-icon>
-            </ion-item>
-        </ion-list>
-    </ion-card>
+  <ion-card>
+    <ion-list>
+      <ion-item class="list-group-item" *ngFor="let store of stores">
+        <ion-label>{{ store.name }}</ion-label>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>

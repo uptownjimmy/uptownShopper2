@@ -54,18 +54,7 @@ import { StoreModule } from './store/store.module';
       },
       deps: [HttpLink]
     }
-  // { provide: 'itemURL', useValue: 'http://localhost:5000/api/item' },
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  // constructor(
-  //   apollo: Apollo,
-  //   httpLink: HttpLink,
-  // ) {
-  //   apollo.create({
-  //     link: httpLink.create({ uri: 'https://localhost:5001/api/graphql' }),
-  //     cache: new InMemoryCache(),
-  //   });
-  // }
-}
+export class AppModule {}

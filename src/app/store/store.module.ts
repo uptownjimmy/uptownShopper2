@@ -9,7 +9,7 @@ import { StoreListComponent } from './list/list.component';
 @NgModule({
   imports: [
     IonicModule, CommonModule, FormsModule, ReactiveFormsModule,
-    RouterModule.forChild([{ path: '', component: StoreListComponent }]),
+    RouterModule.forChild([{ path: 'stores', component: StoreListComponent }]),
   ],
   declarations: [StoreListComponent, StoreDetailComponent],
   // exports: [StoreListComponent, StoreDetailComponent]
