@@ -1,29 +1,88 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button color="primary-shade" fill="outline"></ion-menu-button>
-        <!-- <ion-button size="small" color="primary" fill="outline" (click)="openReorderModal()">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary-shade" fill="outline"></ion-menu-button>
+      <!-- <ion-button size="small" color="primary" fill="outline" (click)="openReorderModal()">
           <ion-icon name="repeat"></ion-icon>
         </ion-button> -->
-      </ion-buttons>
-      <ion-title>
-          <h3>Shopping</h3>
-      </ion-title>
-      <ion-buttons slot="end">
-        <ion-button color="primary-shade" fill="outline" (click)="addOrRemoveItems()">
-            + / -
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
+    </ion-buttons>
+    <ion-title>
+      <h3>Shopping</h3>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button
+        color="primary-shade"
+        fill="outline"
+        (click)="addOrRemoveItems()"
+      >
+        + / -
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
+    <!-- <ion-fab vertical="top" horizontal="end" slot="fixed" edge>
+        <ion-fab-button (click)="addOrRemoveItems()" color="light">
+          <ion-icon></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
   <ion-list>
-      <ion-item
-                class="list-group-item"
-                *ngFor="let item of activeShoppingItems"
-                (click)="openItemOptions($event, item)">
-          <ion-label>{{ item.name }}</ion-label>
-          <ion-icon name="arrow-forward"></ion-icon>
-      </ion-item>
+    <ion-item
+      class="list-group-item"
+      *ngFor="let item of activeShoppingItems"
+      (click)="openItemOptions($event, item)"
+    >
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-item>
   </ion-list>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" edge>
+    <ion-fab-button (click)="openReorderModal()" color="light">
+      <ion-icon src="assets/icon/skinny-sort.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
+<ion-footer>
+  <!-- <ion-row> -->
+    <ion-toolbar>
+      <ion-list>
+        <ion-item lines="none">
+          <!-- <ion-label>Store</ion-label> -->
+          <ion-select interface="action-sheet" placeholder="All Stores">
+            <ion-select-option value="kroger">Kroger</ion-select-option>
+            <ion-select-option value="traderJoes">Trader Joe's</ion-select-option>
+            <ion-select-option value="freshMarket">Fresh Market</ion-select-option>
+            <ion-select-option value="lowes">Lowe's</ion-select-option>
+            <ion-select-option value="publix">Publix</ion-select-option>
+            <ion-select-option value="misc">Misc.</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  <!-- </ion-row>
+  <ion-row>
+    <ion-toolbar>
+      <ion-buttons slot="start" ion-text-center>
+        <ion-button
+          size="small"
+          color="primary"
+          fill="outline"
+          (click)="openReorderModal()"
+        >
+          <ion-icon
+            slot="icon-only"
+            src="assets/icon/skinny-sort.svg"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-segment slot="end">
+        <ion-segment-button (ionSelect)="segmentButtonClicked('sort')">
+          <ion-label>Sorted</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (ionSelect)="segmentButtonClicked('alpha')" checked>
+          <ion-label>Alpha</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-row> -->
+</ion-footer>

@@ -1,0 +1,53 @@
+ion-icon[name='arrow-forward'] {
+  color: #666;
+}
+
+ion-header {
+  height: 7vh;
+
+  ion-toolbar {
+    height: 7vh;
+  }
+}
+
+ion-fab-button {
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: #4c8dff;
+}
+
+ion-select {
+  min-width: 50%;
+  margin-left: 25vw;
+}
+
+ion-segment {
+  width: 35vw;
+  height: 30px;
+  margin: 5px 0 0 10px !important;
+}
+
+ion-segment-button {
+  width: 70px;
+}
+
+ion-button {
+  height: 30px;
+  margin-top: 5px !important;
+}
+
+ion-footer {
+  height: 7vh;
+  // border-top: 1px solid grey !important;
+  
+  ion-toolbar {
+    // height: 7vh;
+    border-top: 1px solid black !important;
+  }
+
+  // ion-row {
+  //   height: 7vh;
+  //   border-top: 1px solid grey !important;
+  // }
+}

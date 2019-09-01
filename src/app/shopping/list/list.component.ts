@@ -12,7 +12,7 @@ import {ShoppingListUpdateModalComponent} from '../update/update.modal';
 @Component({
   selector: 'us-shopping-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  styleUrls: ['./list.component.scss'],
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
@@ -22,6 +22,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   public activeShoppingItems: Item[] = [];
   private stores = Store;
   private selectedStore = 'Filter by Store';
+  public isSorted = false;
 
   constructor(
     public modalController: ModalController,
@@ -123,5 +124,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   filterByStore(storeName) {
     this.selectedStore = storeName;
     // this.activeShoppingItems = this.shoppingItems.filter(item => item.store_Names.find(name => name === storeName));
+  }
+
+  segmentButtonClicked(value) {
+
   }
 }
